@@ -253,7 +253,10 @@ public class MusicOrganizerGUI extends JFrame
             RoundPanel searchCard = card("Search text", Color.WHITE, ROSE, stack(
                 row(label("Text"), searchField,
                     button("List matching", ROSE, LAVENDER, () -> organizer.listMatching(search())),
-                    button("Matching + message", ROSE, LAVENDER, () -> organizer.listMatchingWithMessage(search()))),
+                    button("Matching + message", ROSE, LAVENDER, () -> {
+                        System.out.println("Searching for: \"" + search() + "\"");
+                        organizer.listMatchingWithMessage(search());
+                    })),
                 row(button("Play by artist", NAVY, YELLOW, () -> {
                         final String artist = search();
                         final int myToken = ++playToken;

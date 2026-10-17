@@ -106,20 +106,18 @@ public class MusicOrganizer
         }
     }
 
-    /** 4.26: as listMatching, but always reports how many files matched. */
+    /** 4.26: as listMatching, but prints a message if no file name matched. */
     public void listMatchingWithMessage(String searchString)
     {
-        int count = 0;
+        boolean found = false;
         for (Track track : tracks) {
             if (track.getFilename().contains(searchString)) {
                 System.out.println(track.getDetails());
-                count++;
+                found = true;
             }
         }
-        if (count == 0) {
+        if (!found) {
             System.out.println("No files matched: " + searchString);
-        } else {
-            System.out.println(count + " file(s) matched: " + searchString);
         }
     }
 
