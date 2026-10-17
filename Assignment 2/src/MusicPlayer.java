@@ -1,8 +1,4 @@
-/**
- * STUB with the same method names as the textbook's MusicPlayer, used only so
- * this project compiles and can be tested without audio hardware.
- * In BlueJ, keep the textbook's real MusicPlayer instead of this file.
- */
+
 public class MusicPlayer
 {
     private boolean playing = false;

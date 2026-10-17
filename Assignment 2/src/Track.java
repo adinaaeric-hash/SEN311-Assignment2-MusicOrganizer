@@ -1,7 +1,4 @@
-/**
- * A single music track. Extended for exercises 4.35 and 4.37:
- * playCount (4.35) and year (4.37, my own extra field).
- */
+
 public class Track
 {
     private String artist;

@@ -1,10 +1,6 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/**
- * Music organizer: cumulative solution for Assignment 2
- * (Objects First with Java, Chapter 4).
- */
 public class MusicOrganizer
 {
     private ArrayList<Track> tracks;

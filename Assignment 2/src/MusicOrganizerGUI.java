@@ -13,11 +13,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Optional, cute Swing front end for MusicOrganizer (not required by the assignment).
- * Every button calls the same methods as the exercises. What those methods print is
- * shown in the Console card; the Library card shows the tracks as little cards.
- */
 public class MusicOrganizerGUI extends JFrame
 {
     // Palette
