@@ -50,8 +50,30 @@ public class Track
     public void resetPlayCount()     { playCount = 0; }
 
     // 4.37: year accessor and mutator
-    public int getYear()          { return year; }
-    public void setYear(int year) { this.year = year; }
+    /** Earliest year accepted; years must also not be in the future. */
+    public static final int MIN_YEAR = 1000;
+
+    public static int maxYear()
+    {
+        return java.time.Year.now().getValue();
+    }
+
+    public static boolean isValidYear(int year)
+    {
+        return year >= MIN_YEAR && year <= maxYear();
+    }
+
+    public int getYear()           { return year; }
+
+    /** Stores the year only if it is valid. @return true if it was stored */
+    public boolean setYear(int year)
+    {
+        if (!isValidYear(year)) {
+            return false;
+        }
+        this.year = year;
+        return true;
+    }
 
     public String getDetails()
     {

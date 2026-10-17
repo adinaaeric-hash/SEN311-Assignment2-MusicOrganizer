@@ -161,12 +161,23 @@ public class MusicOrganizer
         player.stop();
     }
 
-    /** 4.37: set the year of a track through the organizer. */
-    public void setYear(int index, int year)
+    /**
+     * 4.37: set the year of a track through the organizer.
+     * The year is checked first: it must be between Track.MIN_YEAR and the current year.
+     * @return true if the year was stored, false if the index or the year was not valid
+     */
+    public boolean setYear(int index, int year)
     {
-        if (validIndex(index)) {
-            tracks.get(index).setYear(year);
+        if (!validIndex(index)) {
+            return false;
         }
+        if (!Track.isValidYear(year)) {
+            System.out.println("Invalid year " + year + ". Please enter a year between "
+                + Track.MIN_YEAR + " and " + Track.maxYear() + ".");
+            return false;
+        }
+        tracks.get(index).setYear(year);
+        return true;
     }
 
     /** 4.39: removes every track whose title contains searchString, and says how many. */
